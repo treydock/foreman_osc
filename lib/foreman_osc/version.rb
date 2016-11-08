@@ -1,3 +1,3 @@
 module ForemanOsc
-  VERSION = '0.0.2'.freeze
+  VERSION = '0.2.0'.freeze
 end

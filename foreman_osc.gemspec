@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'OSC Foreman Plugin'
 
   #s.files = Dir['{app,config,db,lib,locale}/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
-  s.files = Dir['lib/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
+  s.files = Dir['app/models/**/*', 'lib/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'deface'
