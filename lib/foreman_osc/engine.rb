@@ -18,14 +18,13 @@ module ForemanOsc
       load 'osc.rake'
     end
 
-=begin
     config.to_prepare do
       begin
-        Parameter.send(:include, ForemanOsc::ParameterExtensions)
+        #Parameter.send(:include, ForemanOsc::ParameterExtensions)
+        #HostParameter.send(:include, ForemanOsc::HostParameterExtensions)
       rescue => e
         Rails.logger.warn "ForemanOsc: skipping engine hook (#{e})"
       end
     end
-=end
   end
 end

@@ -24,6 +24,8 @@ Example:
         exit 1
       end
 
+      User.current = User.find_by_login('admin')
+
       Host.search_for(search).each do |host|
         next unless host.provision_interface.present?
         next unless host.tftp?
@@ -60,6 +62,8 @@ Example:
         $stdout.puts "Must provide search"
         exit 1
       end
+
+      User.current = User.find_by_login('admin')
 
       Host.search_for(search).each do |host|
         next unless host.dns?
@@ -99,6 +103,8 @@ Example:
         $stdout.puts "Must provide search"
         exit 1
       end
+
+      User.current = User.find_by_login('admin')
 
       Host.search_for(search).each do |host|
         next unless host.dhcp?
