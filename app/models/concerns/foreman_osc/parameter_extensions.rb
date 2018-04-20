@@ -22,10 +22,7 @@ module ForemanOsc
     def sync_tftp
       Foreman::Logging.logger('foreman_osc/tftp_sync').info("HIT sync_tftp")
       if self.class.name == 'GroupParameter'
-        hosts = self.hostgroup.hosts
-        if hosts.empty?
-          hosts = Host::Managed.authorized.where(hostgroup: self.hostgroup.child_ids)
-        end
+        hosts = Host::Managed.authorized.where(hostgroup: self.hostgroup.subtree_ids)
       elsif self.class.name == 'HostParameter'
         hosts = [self.host]
       else
