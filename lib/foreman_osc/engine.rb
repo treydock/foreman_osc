@@ -4,7 +4,7 @@ module ForemanOsc
   class Engine < ::Rails::Engine
     engine_name 'foreman_osc'
 
-    #config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+    # config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
 
     initializer 'foreman_osc.register_plugin', :before => :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_osc do
@@ -20,9 +20,9 @@ module ForemanOsc
 
     config.to_prepare do
       begin
-        #Parameter.send(:include, ForemanOsc::ParameterExtensions)
-        #HostParameter.send(:include, ForemanOsc::HostParameterExtensions)
-      rescue => e
+        # Parameter.send(:include, ForemanOsc::ParameterExtensions)
+        # HostParameter.send(:include, ForemanOsc::HostParameterExtensions)
+      rescue => e # rubocop:disable RescueStandardError
         Rails.logger.warn "ForemanOsc: skipping engine hook (#{e})"
       end
     end

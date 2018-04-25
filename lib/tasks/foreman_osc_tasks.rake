@@ -13,6 +13,7 @@ namespace :test do
 end
 
 namespace :foreman_osc do
+  desc 'Run rubocop for ForemanOsc'
   task :rubocop do
     begin
       require 'rubocop/rake_task'
