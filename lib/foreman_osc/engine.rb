@@ -1,12 +1,10 @@
-require 'deface'
-
 module ForemanOsc
   class Engine < ::Rails::Engine
     engine_name 'foreman_osc'
 
     # config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
 
-    initializer 'foreman_osc.register_plugin', :before => :finisher_hook do |_app|
+    initializer 'foreman_osc.register_plugin', :before => :finisher_hook do
       Foreman::Plugin.register :foreman_osc do
         requires_foreman '>= 1.11'
 
